@@ -23,6 +23,7 @@ class ApiAction extends Action
     public $data;
 
     public $pagedData = [
+        'totalCount' => 0,
         'totalPage' => 0,
         'list' => []
     ];
