@@ -57,9 +57,10 @@ class Time
      * @desc 友好得返回两个时间戳距离
      * @param $timestamp1
      * @param $timestamp2
+     * @param $short
      * @return string
      */
-    public static function friendlyDiff($timestamp1, $timestamp2)
+    public static function friendlyDiff($timestamp1, $timestamp2, $short = false)
     {
         $datetime1 = new \DateTime(date('Y-m-d H:i:s', $timestamp1));
         $datetime2 = new \DateTime(date('Y-m-d H:i:s', $timestamp2));
@@ -74,22 +75,37 @@ class Time
         $distance = '';
 
         if ($time['y']) {
+            if ($short) {
+                return $time['y'] . '年';
+            }
             $distance .= $time['y'] . '年';
         }
 
         if ($time['m']) {
+            if ($short) {
+                return $time['m'] . '月';
+            }
             $distance .= $time['m'] . '月';
         }
 
         if ($time['d']) {
+            if ($short) {
+                return $time['d'] . '天';
+            }
             $distance .= $time['d'] . '天';
         }
 
         if ($time['h']) {
+            if ($short) {
+                return $time['h'] . '小时';
+            }
             $distance .= $time['h'] . '小时';
         }
 
         if ($time['i']) {
+            if ($short) {
+                return $time['i'] . '分';
+            }
             $distance .= $time['i'] . '分';
         }
 
