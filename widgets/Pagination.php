@@ -26,9 +26,12 @@ class Pagination extends yii\data\Pagination
         $this->setPage($currentPage);
     }
 
-    public static function applyQuery(yii\db\ActiveQuery $query)
+    public static function applyQuery(yii\db\ActiveQuery $query, $defaultPageSize = 10)
     {
-        $pagination = new self(['totalCount' => $query->count()]);
+        $pagination = new self([
+            'totalCount' => $query->count(),
+            'defaultPageSize' => $defaultPageSize
+        ]);
 
         $query->offset($pagination->offset);
         $query->limit($pagination->limit);
