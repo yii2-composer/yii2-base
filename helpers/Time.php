@@ -109,6 +109,13 @@ class Time
             $distance .= $time['i'] . '分';
         }
 
+        if ($time['s']) {
+            if ($short) {
+                return $time['s'] . '秒';
+            }
+            $distance .= $time['s'] . '秒';
+        }
+
         return $distance;
     }
 
