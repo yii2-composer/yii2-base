@@ -12,7 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "liyifei/yii2-pluploader": "dev-master"
+        "liyifei/yii2-pluploader": "~1.0"
     },
     "autoload": {
         "psr-4": {
@@ -31,10 +31,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "git",
-            "url": "http://deploy:deploy@121.40.176.149:3000/Yii2-composer/yii2-pluploader.git"
         }
     ]
 }
