@@ -136,7 +136,9 @@ class Time
         if ($type == 'full') {
             return date("Y-m-d , H:i:s", $sTime);
         } else {
-            if ($dTime < 60 && $dTime > 0) {
+            if ($dTime == 0) {
+                return '刚刚';
+            } elseif ($dTime < 60 && $dTime > 0) {
                 return $dTime . "秒前";
             } elseif ($dTime < 3600 && $dTime > 0) {
                 return intval($dTime / 60) . "分钟前";
